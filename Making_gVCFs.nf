@@ -37,7 +37,7 @@ process variant_calling {
     """    
 	samtools index -bc ${pf_bam}
 
-	for i in 1 2 #3  4 5 6 7 8 9 10 11 12 13 14
+	for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14
 	    do
 	        gatk --java-options "-Xmx${params.gatk_memory}g" HaplotypeCaller -R $refdir/Pf3D7.fasta -I ${pf_bam} -ERC GVCF -ploidy 2 \
 	        --native-pair-hmm-threads 16 -O  ${pair_id}.chr"\$i".g.vcf --assembly-region-padding 100 \
